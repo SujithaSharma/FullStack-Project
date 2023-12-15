@@ -1,0 +1,29 @@
+.container-fluid {
+    text-align: center;
+    padding: 0;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 591px;
+    position: relative;
+}
+
+.textarea {
+    position: absolute;
+    top: 4cm;
+    left: 4cm;
+    width: 50%;
+}
+
+.btn-primary {
+    position: absolute;
+    top: 7.5cm;
+    left: 7cm;
+}
+
+.text {
+    color: black;
+    padding: 20px;
+    text-shadow: 1px 1px grey;
+}

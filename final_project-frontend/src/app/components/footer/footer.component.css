@@ -1,0 +1,13 @@
+.nav-link {
+    color: white;
+    font-weight: bold;
+    padding-left: 20px !important
+}
+
+.nav-link:hover {
+    color: yellow;
+}
+
+.active {
+    color: yellow !important
+}

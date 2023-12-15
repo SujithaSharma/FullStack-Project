@@ -1,0 +1,78 @@
+.navbar-brand {
+    color: white;
+    padding-left: 50px;
+    font-weight: bold;
+}
+
+.star {
+    color: red
+}
+
+small {
+    color: red
+}
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+    padding-right: 50px;
+}
+
+.nav-link {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: yellow;
+}
+
+.navbar-nav .nav-link.active {
+    color: yellow !important;
+}
+
+.btn-light {
+    width: 90px;
+    height: 35px;
+    margin-top: 3px;
+    padding-top: 4px;
+}
+
+.mb-3 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.profile-button {
+    border-radius: 50%;
+    width: 35px;
+}
+
+.d-flex {
+    justify-content: space-between;
+    padding: 0px 15px;
+}
+
+.card {
+    width: 12rem;
+    height: 8rem;
+    top: 46px;
+    right: 66px;
+    position: absolute;
+    z-index: 1;
+}
+
+.logoutbtn {
+    width: 40px;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(176, 173, 173, 0.5)
+}
+
+.form-group {
+    padding: 15px
+}

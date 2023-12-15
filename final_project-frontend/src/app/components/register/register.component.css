@@ -1,0 +1,24 @@
+.container-fluid {
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.form-group {
+    padding-top: 10px;
+}
+
+.gender {
+    padding-left: 20px;
+}
+
+.btn-primary {
+    margin-top: 10px;
+}
+
+.star {
+    color: red;
+}
+
+small {
+    color: red;
+}

@@ -1,0 +1,38 @@
+<div style="height:591px;">
+    <div class="container-fluid d-flex">
+        <h3>Employees List</h3>
+        <button class="btn btn-primary" (click)="addEmployee()">{{btnText}}</button>
+    </div>
+    <div style="padding: 10px;">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Current Project</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of allEmployees">
+                    <th><a (click)="redirectToUpdate(employee.id)" style="text-decoration: none;">{{employee.id}}</a>
+                    </th>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.designation}}</td>
+                    <td>{{employee.phone}}</td>
+                    <td>{{employee.currentproject}}</td>
+                    <td>{{employee.salary}}</td>
+                    <td><button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="allEmployees.length == 0" style="text-align: center">
+            <h3>Please add an employee</h3>
+        </div>
+    </div>
+</div>

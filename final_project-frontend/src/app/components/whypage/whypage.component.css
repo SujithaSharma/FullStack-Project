@@ -1,0 +1,48 @@
+.card {
+    width: 95%;
+    height: 515px;
+    margin: 0 auto;
+    position: absolute;
+    top: 35px;
+    left: 45px;
+    background: rgb(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 1px 1px grey;
+}
+
+.customer_text {
+    color: pink;
+    padding-left: 20px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: 100%
+}
+
+.card_parent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card-body {
+    padding: 10px;
+    padding-left: 22px;
+}
+
+h4 {
+    color: white
+}
+
+p {
+    padding-left: 30px;
+    font-weight: 600;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+.whyus {
+    text-align: center;
+}

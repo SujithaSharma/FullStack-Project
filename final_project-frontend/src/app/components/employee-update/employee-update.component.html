@@ -1,0 +1,80 @@
+<div class="container-fluid" style="height:591px;">
+    <div class="container-fluid d-flex">
+        <h3>Update Employee</h3>
+        <button class="btn btn-primary" (click)="redirectToList()">View List</button>
+    </div>
+    <form #updateEmployeeForm="ngForm" (submit)="updateEmployee(updateEmployeeForm)">
+        <div class="form-group">
+            <label>Id</label><span class="star">*</span>
+            <input type="number" #id="ngModel" class="form-control" [(ngModel)]="oldEmployee.id" name="id"
+                placeholder="Enter Id" required>
+            <small *ngIf="!id.valid && (name.touched || name.dirty) && id.errors?.['required']">
+                Id is mandatory
+            </small>
+        </div>
+        <div class="form-group">
+            <label>Name</label><span class="star">*</span>
+            <input type="text" class="form-control" #name="ngModel" [(ngModel)]="oldEmployee.name"
+                pattern="^[a-z A-Z]+$" name="name" placeholder="Enter Name" required>
+            <small *ngIf="!name.valid && (name.touched || name.dirty)">
+                <small *ngIf="name.errors?.['required']">
+                    Name is required
+                </small>
+                <small *ngIf="name.errors?.['pattern']">
+                    Name should contain only alphabets
+                </small>
+            </small>
+        </div>
+        <div class="form-group">
+            <label>Email</label><span class="star">*</span>
+            <input type="text" class="form-control" #email="ngModel" [(ngModel)]="oldEmployee.email"
+                pattern="^[A-Z a-z 0-9 _&]+@[gmail,yahoo,outlook]+[.com]+$" name="email" placeholder="Enter Email"
+                required>
+            <small *ngIf="!email.valid && (email.touched || email.dirty)">
+                <small *ngIf="email.errors?.['required']">
+                    Email is required
+                </small>
+                <small *ngIf="email.errors?.['pattern']">
+                    Email should be in form of name@domain.com
+                </small>
+            </small>
+        </div>
+        <div class="form-group">
+            <label>Designation</label><span class="star">*</span>
+            <input type="text" class="form-control" #designation="ngModel" [(ngModel)]="oldEmployee.designation"
+                pattern="^[a-z A-Z]+$" name="designation" placeholder="Enter Designation" required>
+            <small *ngIf="!designation.valid && (designation.touched || designation.dirty)">
+                <small *ngIf="designation.errors?.['required']">
+                    Designation is required
+                </small>
+                <small *ngIf="designation.errors?.['pattern']">
+                    Designation should contain only alphabets
+                </small>
+            </small>
+        </div>
+        <div class="form-group">
+            <label>Phone</label><span class="star">*</span>
+            <input type="number" class="form-control" #phone="ngModel" [(ngModel)]="oldEmployee.phone" name="phone"
+                placeholder="Enter Phone" pattern="^[0-9]{10}" required>
+            <small *ngIf="!phone.valid && (phone.touched || phone.dirty)">
+                <small *ngIf="phone.errors?.['required']">
+                    Phone is required
+                </small>
+                <small *ngIf="phone.errors?.['pattern']">
+                    Phone should contain 10 digits
+                </small>
+            </small>
+        </div>
+        <div class="form-group">
+            <label>Current Project</label>
+            <input type="text" class="form-control" [(ngModel)]="oldEmployee.currentproject" name="currentproject"
+                placeholder="Enter Current Project">
+        </div>
+        <div class="form-group">
+            <label>Salary</label>
+            <input type="text" class="form-control" [(ngModel)]="oldEmployee.salary" name="salary"
+                placeholder="Enter Salary">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

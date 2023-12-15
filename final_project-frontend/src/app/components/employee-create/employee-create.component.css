@@ -1,0 +1,36 @@
+.container-fluid {
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.form-group {
+    padding-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.gender {
+    padding-left: 20px;
+}
+
+.btn-primary {
+    margin-top: 10px;
+}
+
+.btn-primary:disabled {
+    background: grey;
+}
+
+small {
+    color: red;
+}
+
+.star {
+    color: red
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}

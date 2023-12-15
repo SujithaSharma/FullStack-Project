@@ -1,0 +1,8 @@
+<div id="parent">
+    <app-navbar></app-navbar>
+    <div id="child" style="height:591px;"
+        [style.width]="selectedTab == '/' || '/why' || '/pricing' || '/customers' ? '100%' : '99%'">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,22 @@
+.card {
+    height: 295px
+}
+
+.card-body {
+    width: 757px;
+    height: 295px
+}
+
+.card-image {
+    width: 720px;
+    height: 250px;
+}
+
+.dashboard-outer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.d-flex {
+    justify-content: space-between;
+}

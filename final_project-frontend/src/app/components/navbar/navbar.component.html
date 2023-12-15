@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg bg-primary" id="navbar-example2">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">EMS ENTERPRISES</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Products and Services
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/dashboard">Employee
+                                Management</a></li>
+                        <li><a class="dropdown-item" routerLink="/dashboard">Employee
+                                Onboarding</a></li>
+                        <li><a class="dropdown-item" routerLink="/dashboard">Attendence
+                                Sheet</a></li>
+                        <li><a class="dropdown-item" routerLink="/dashboard">Employee
+                                List</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="why" [routerLinkActive]="'active'" aria-current="page">Why
+                        EMS?</a>
+                </li>
+                <li class="nav-item" style="padding-right: 10px;">
+                    <a class="nav-link" routerLink="/pricing" [routerLinkActive]="'active'">Pricing</a>
+                </li>
+                <button type="button" class="btn btn-light" *ngIf="showLoginBtn" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Login
+                </button>
+                <button type="button" class="btn btn-light profile-button" *ngIf="showProfileBtn" data-bs-toggle="modal"
+                    data-bs-target="#profileModal" (click)="showLogoutPopup = !showLogoutPopup">
+                    {{profileLetter}}
+                </button>
+                <div class="card" *ngIf="showLogoutPopup">
+                    <div class="card-body" style="text-align: center;">
+                        <p class="card-text">Signed in as {{profileName}}.<br>Do you want to logout ?</p>
+                        <button class="btn btn-primary" (click)="logout()">Logout</button>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form #loginForm="ngForm" (submit)="loggedIn(loginForm,login)">
+                <div class="form-group">
+                    <label>Email</label><span class="star">*</span>
+                    <input type="text" class="form-control" #email="ngModel" [(ngModel)]="login.email"
+                        pattern="^[A-Z a-z 0-9 _&]+@[gmail,yahoo,outlook]+[.com]+$" name="email"
+                        placeholder="Enter Email" required>
+                    <small *ngIf="!email.valid && (email.touched || email.dirty)">
+                        <small *ngIf="email.errors?.['required']">
+                            Email is required
+                        </small>
+                        <small *ngIf="email.errors?.['pattern']">
+                            Email should be in form of name@domain.com
+                        </small>
+                    </small>
+                </div>
+                <div class="form-group" style="padding-top: 0px;">
+                    <label>Password</label><span class="star">*</span>
+                    <input type="password" class="form-control" #password="ngModel" [(ngModel)]="login.password"
+                        name="password" placeholder="Enter Password" required>
+                    <small *ngIf="!password.valid && (password.touched || password.dirty)">
+                        <small *ngIf="password.errors?.['required']">
+                            Password is required
+                        </small>
+                        <small *ngIf="password.errors?.['minLength']">
+                            Password should be minimum of 8 characters
+                        </small>
+                    </small>
+                </div>
+                <div class="d-flex">
+                    <div>Forgot Password ?</div>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Login</button>
+                </div>
+            </form>
+            <div style="text-align: center;padding-bottom: 10px;">New here ? <a style="color:blue" routerLink="register"
+                    data-bs-dismiss="modal">Register as user</a></div>
+        </div>
+    </div>
+</div>
